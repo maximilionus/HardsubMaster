@@ -5,7 +5,7 @@ from termcolor import cprint
 import helpers as h
 
 def burn_subtitles(mkv_file: str, output_dir: str, subtitlesFile: str):
-	subprocess.call(f'ffmpeg -i "{mkv_file}" -vf subtitles={subtitlesFile} {path.join(output_dir, mkv_file)}')
+	subprocess.call(f'ffmpeg -i "{mkv_file}" -preset ultrafast -vf subtitles={subtitlesFile} {path.join(output_dir, mkv_file)}')
 	cprint(f'>> {mkv_file} << DONE', color='green', attrs=['reverse'])
 
 if sys.platform == 'win32': system("color"); system(f"title {h.NAME_STR} (version {h.VERSION_STR})")
