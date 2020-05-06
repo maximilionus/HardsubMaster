@@ -8,10 +8,11 @@ All releases are built for `win-x64`, so if you're using different platform you 
 | [`ffmpeg`](https://ffmpeg.org/)  installed and in `PATH` |
 
 ## Usage
-Simply drag all `mkv` files to `HardsubMaster` executable and it will do the rest.
+- If subtitles are already inside the container then simply drag all `mkv` files to `HardsubMaster` executable and it will do the rest.
+- If subtitles are not inside the container then use `--subtitles path_to_subs` argument.
 
 ## How to build
-1. Install `python3` *(3.8.2 was used by me)* and `pip` package manager
-2. Run `py -m pip install pipenv`
-3. Then run `pipenv install && pipenv run py setup.py build && pipenv --rm` in this project dir
-4. Build can be found in `./build/` directory
+1. Install `python3` *(3.8.2 was used by me)* and `pip` package manager.
+2. Run `py -m pip install pipenv`.
+3. Then run `pipenv install && pipenv run py setup.py build && pipenv --rm` in this project dir.
+4. Build can be found in `./build/` directory.
