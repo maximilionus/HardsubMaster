@@ -11,6 +11,6 @@ build_exe_options = {
 base = None
 
 setup(  name = h.NAME_STR,
-		version = h.VERSION_STR,
+		version = h.BUILD_STR,
 		options = {"build_exe": build_exe_options},
 		executables = [Executable("main.py", base=base, targetName=h.NAME_STR.replace(' ', ''))])
