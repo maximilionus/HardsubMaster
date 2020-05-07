@@ -12,6 +12,7 @@ All releases are built for `win-x64`, so if you're using different platform you 
 | [`ffmpeg`](https://ffmpeg.org/) installed and in `PATH` | 20200504-5767a2e |
 
 ## Usage
+- Make sure that name of your file is as short and simple as possible. Something like `test1.mkv`.
 - If subtitles are already inside the container then simply drag all `mkv` files to `HardsubMaster` executable and it will do the rest. Result will be saved to `./output/`
 
 ## How to build

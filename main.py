@@ -8,7 +8,7 @@ def burn_subtitles(mkv_file: str, output_dir: str, subtitlesFile: str):
 	subprocess.call(f'ffmpeg -i "{mkv_file}" -c:v libx264 -crf 18 -c:a copy -b:a 128k -vf subtitles={subtitlesFile} {path.join(output_dir, mkv_file)}')
 	cprint(f'>> {mkv_file} << DONE', color='green', attrs=['reverse'])
 
-if sys.platform == 'win32': system("color"); system(f"title {h.NAME_STR} (version {h.VERSION_STR})")
+if sys.platform == 'win32': system("color"); system(f"title {h.NAME_STR} by @maximilionus (build {h.VERSION_STR})")
 if len(sys.argv) == 1: cprint('Not enough files', color='red', attrs=['reverse']); input('PRESS ENTER TO EXIT'); sys.exit()
 
 mkv_files = h.returnMKVs(sys.argv[1:])
