@@ -18,4 +18,4 @@ for mkv_file in mkv_files:
 	burn_subtitles(mkv_file=mkv_file, output_dir=output_dir, subtitlesFile=sys.argv[sys.argv.index('--subtitles') + 1] if '--subtitles' in sys.argv else mkv_file)
 
 cprint(f'{len(mkv_files)} files processed', color='yellow', attrs=['reverse'])
-input('PRESS ENTER TO EXIT')
+input('\aPRESS ENTER TO EXIT')
