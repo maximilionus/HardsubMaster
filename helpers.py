@@ -1,6 +1,5 @@
 from os import path, listdir
 from sys import platform
-import json
 
 NAME_STR = "Hardsub Master"
 VERSION_STR = "0.1"

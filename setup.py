@@ -4,7 +4,8 @@ import helpers as h
 
 build_exe_options = {
 	"packages": ["os", "subprocess", "termcolor"],
-	"excludes": ["tkinter", "asyncio", "distutils", "email", "html", "http", "logging", "test", "unittest", "urllib"]
+	"excludes": ["tkinter", "asyncio", "distutils", "email", "html", "http", "logging", "test", "unittest", "urllib"],
+	"include_files": ["./LICENSE"]
 }
 
 base = None
