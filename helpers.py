@@ -3,7 +3,7 @@ from sys import platform, argv
 import json
 
 NAME_STR = "Hardsub Master"
-BUILD_STR = "07052020-2249"
+BUILD_STR = "08052020-0353"
 TITLE_STR = f"title {NAME_STR} by @maximilionus (build {BUILD_STR})"
 EXECUTABLE_LOCATION = path.dirname(argv[0])
 
