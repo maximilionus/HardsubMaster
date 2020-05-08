@@ -31,7 +31,7 @@ Configuration file *(.json)* automaticly generates in app directory on first lau
 
 |Value|Description| Values |
 | :-- | :-- | :-- |
-| `ffmpeg_path` | Path to ffmpeg executable | `ffmpeg` if you have ffmpeg installed and accesseble from terminal.<br>`{path}` - If `ffmpeg` executable found in `./ffmpeg/` dir and platform is `windows` |
+| `ffmpeg_path` | Path to ffmpeg executable | > `"ffmpeg"` - if you have ffmpeg installed and accessible from terminal.<br>> `"{path}"` - If `ffmpeg` executable found in `./ffmpeg/` dir and platform is `windows` |
 
 ---
 
