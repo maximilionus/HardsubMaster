@@ -3,9 +3,9 @@ import subprocess
 from termcolor import cprint, colored
 import helpers as h
 
-def burn_subtitles(mkv_file_path: str, output_dir: str, ffmpeg: str):
+def burn_subtitles(mkv_file_path: str, output_dir: str, ffmpeg_path: str):
 	mkv_file = os.path.basename(mkv_file_path)
-	subprocess.call(f'ffmpeg -i "{mkv_file}" -c:v libx264 -crf 18 -c:a copy -b:a 128k -vf subtitles={mkv_file} {os.path.join(output_dir, mkv_file)}')
+	subprocess.call(f'{ffmpeg_path} -i "{mkv_file}" -c:v libx264 -crf 18 -c:a copy -b:a 128k -vf subtitles={mkv_file} {os.path.join(output_dir, mkv_file)}')
 	cprint(f'>> {mkv_file} << DONE', color='green', attrs=['reverse'])
 
 # Init
@@ -22,7 +22,7 @@ for mkv_file_path in mkv_files_paths:
 	hmdir.switchDir(1)
 	output_dir = './output'
 	if not os.path.exists(output_dir): os.mkdir(output_dir)
-	burn_subtitles(mkv_file_path=mkv_file_path, output_dir=output_dir, ffmpeg=hmconfig.getFFmpegPath())
+	burn_subtitles(mkv_file_path=mkv_file_path, output_dir=output_dir, ffmpeg_path=hmconfig.getFFmpegPath())
 
-cprint(f'{len(mkv_files_paths)} files processed', color='green', attrs=['reverse'])
-input('\a' + colored('PRESS ENTER TO EXIT', color='red'))
+cprint(f'{len(mkv_files_paths)} files processed', color='green')
+input('\a' + colored('PRESS ENTER TO EXIT', color='green', attrs=['reverse']))

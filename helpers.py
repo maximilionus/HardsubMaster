@@ -5,9 +5,6 @@ import json
 NAME_STR = "Hardsub Master"
 BUILD_STR = "07052020-2249"
 TITLE_STR = f"title {NAME_STR} by @maximilionus (build {BUILD_STR})"
-CONFIG_DEFAULT = {
-	"ffmpeg_path": path.abspath("./ffmpeg/ffmpeg.exe") if (path.exists('./ffmpeg/ffmpeg.exe') and platform == 'win32') else "ffmpeg"
-}
 EXECUTABLE_LOCATION = path.dirname(argv[0])
 
 def returnMKVs(files: list):
@@ -34,6 +31,9 @@ class HMDirHandler:
 
 class HMConfig:
 	def __init__(self):
+		CONFIG_DEFAULT = {
+			"ffmpeg_path": path.abspath("./ffmpeg/ffmpeg.exe") if (path.exists('./ffmpeg/ffmpeg.exe') and platform == 'win32') else "ffmpeg"
+		}
 		if not self.exists():
 			with open('./config.json', 'wt') as f:
 				json.dump(CONFIG_DEFAULT, f, indent=4)
@@ -41,7 +41,7 @@ class HMConfig:
 			self._config = json.load(f)
 
 	def getFFmpegPath(self) -> str:
-		return self._config["ffmpeg_path"]
+		return path.normpath(self._config["ffmpeg_path"])
 
 	@staticmethod
 	def exists():
